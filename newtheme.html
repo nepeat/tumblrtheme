@@ -245,167 +245,165 @@
 	</div>
 
 	<div class="container">
-		<div id="entries">
+		{block:Posts}
+		<div class="row">
 
-			{block:Posts}
-			<div class="row">
+			<div class="twelve columns post">
+				<div class="inner">
 
-				<div class="twelve columns post">
-					<div class="inner">
-
-						{block:Photo}
-							{LinkOpenTag}
-								<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
-							{LinkCloseTag}
-							{block:Caption}
-								<div class="caption">
-									{Caption}
-								</div>
-							{/block:Caption}
-						{/block:Photo}
-
-						{block:Photoset}
-							<div class="photoset">
-								{Photoset}
-							</div>
-							{block:Caption}
-								<div class="caption">
-									{Caption}
-								</div>
-							{/block:Caption}
-						{/block:Photoset}
-
-						{block:Text}
-							{block:Title}<h1>{Title}</h1>{/block:Title}
-								{block:Photo}
-									{LinkOpenTag}
-										<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
-									{LinkCloseTag}
-									{block:Caption}
-										<div class="caption">
-											{Caption}
-										</div>
-									{/block:Caption}
-								{/block:Photo}
-							{Body}
-						{/block:Text}
-
-						{block:Quote}
-							<blockquote>
-								<p>"{Quote}"</p>
-								{block:Source}
-									<footer><cite>{Source}</cite></footer>
-								{/block:Source}
-							</blockquote>
-						{/block:Quote}
-
-
-						{block:Video}
-							<div class="videoWrapper">
-								{VideoEmbed-250}
-							</div>
-							{block:Caption}
-								<div class="caption">
-									{Caption}
-								</div>
-							{/block:Caption}
-						{/block:Video}
-
-
-						{block:Link}
-							<a href="{URL}" class="link" {Target}>
-								<h2>{Name} »</h2>
-							</a>
-							{block:Description}
-								<div class="caption">{Description}</div>
-							{/block:Description}
-						{/block:Link}
-
-						{block:Chat}
-							{block:Title} <h1>{Title}</h1> {/block:Title}
-							<ul class="chat">
-							{block:Lines}
-								<li class="{Alt} chatlines user_{UserNumber}">
-									{block:Label}
-										<strong>{Label}</strong>
-									{/block:Label}
-									{Line}
-								</li>
-							{/block:Lines}
-							</ul>
-						{/block:Chat}
-
-						{block:Audio}
-							{AudioEmbed}
-							{block:Caption}
+					{block:Photo}
+						{LinkOpenTag}
+							<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+						{LinkCloseTag}
+						{block:Caption}
 							<div class="caption">
 								{Caption}
 							</div>
-							{/block:Caption}
-						{/block:Audio}
+						{/block:Caption}
+					{/block:Photo}
 
-
-						{block:Answer}
-							<div class="row askrow">
-								<div class="two columns">
-									<img src="{AskerPortraitURL-128}" style="width: 128px; height: 128px" class="profile media-object">
-								</div>
-								<div class="ten columns">
-									<h4 class="media-heading">
-										{Asker} asked
-									</h4>
-									{Question}
-								</div>
-							</div>
-
-							<div class="caption">
-								{Answer}
-							</div>
-						{/block:Answer}
-
-						{block:IndexPage}
-							<hr>
-							<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCount} notes.</a>
-							<a class="u-pull-right" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
-						{/block:IndexPage}
-
-						{block:PermalinkPage}
-							{block:Date}
-							<div id="permalink">
-
-								<hr>
-
-								<p><b>Date:</b> {ShortMonth} {DayOfMonthWithZero}, {Year}</p>
-								{block:NoteCount}<p><b>Notes:</b> {NoteCount}</p>{/block:NoteCount}
-								{block:RebloggedFrom}<p><b>Via:</b> <a href="{ReblogParentURL}">{ReblogParentName}</a></p>{/block:RebloggedFrom}
-								{block:ContentSource}<p><b>Source:</b> <a href="{SourceURL}">{SourceTitle}</a></p>{/block:ContentSource}
-								{block:HasTags}<p><b>Tagged:</b>{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}</p>{/block:HasTags}
-							</div>
-							{/block:Date}
-						{/block:PermalinkPage}
-
-						{block:PostNotes}
-							<div class="note">
-								{PostNotes}
-							</div>
-						{/block:PostNotes}
-					</div>
-				</div>
-			</div>
-
-			{/block:Posts}
-			{block:Pagination}
-			<div id="pagebar" class="nav container">
-				<div class="row">
-					<div class="twelve columns post">
-						<div class="inner">
-							<ul class="pagination center">{block:PreviousPage}<li><a href="{PreviousPage}">←</a></li>{/block:PreviousPage}{block:JumpPagination length="4"}{block:CurrentPage}<li><a href="#" class="current_page active">{PageNumber}</a></li>{/block:CurrentPage}{block:JumpPage}<li><a class="jump_page" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<li><a href="{NextPage}">→</a></li>{/block:NextPage}</ul>
+					{block:Photoset}
+						<div class="photoset">
+							{Photoset}
 						</div>
+						{block:Caption}
+							<div class="caption">
+								{Caption}
+							</div>
+						{/block:Caption}
+					{/block:Photoset}
+
+					{block:Text}
+						{block:Title}<h1>{Title}</h1>{/block:Title}
+							{block:Photo}
+								{LinkOpenTag}
+									<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+								{LinkCloseTag}
+								{block:Caption}
+									<div class="caption">
+										{Caption}
+									</div>
+								{/block:Caption}
+							{/block:Photo}
+						{Body}
+					{/block:Text}
+
+					{block:Quote}
+						<blockquote>
+							<p>"{Quote}"</p>
+							{block:Source}
+								<footer><cite>{Source}</cite></footer>
+							{/block:Source}
+						</blockquote>
+					{/block:Quote}
+
+
+					{block:Video}
+						<div class="videoWrapper">
+							{VideoEmbed-250}
+						</div>
+						{block:Caption}
+							<div class="caption">
+								{Caption}
+							</div>
+						{/block:Caption}
+					{/block:Video}
+
+
+					{block:Link}
+						<a href="{URL}" class="link" {Target}>
+							<h2>{Name} »</h2>
+						</a>
+						{block:Description}
+							<div class="caption">{Description}</div>
+						{/block:Description}
+					{/block:Link}
+
+					{block:Chat}
+						{block:Title} <h1>{Title}</h1> {/block:Title}
+						<ul class="chat">
+						{block:Lines}
+							<li class="{Alt} chatlines user_{UserNumber}">
+								{block:Label}
+									<strong>{Label}</strong>
+								{/block:Label}
+								{Line}
+							</li>
+						{/block:Lines}
+						</ul>
+					{/block:Chat}
+
+					{block:Audio}
+						{AudioEmbed}
+						{block:Caption}
+						<div class="caption">
+							{Caption}
+						</div>
+						{/block:Caption}
+					{/block:Audio}
+
+
+					{block:Answer}
+						<div class="row askrow">
+							<div class="two columns">
+								<img src="{AskerPortraitURL-128}" style="width: 128px; height: 128px" class="profile media-object">
+							</div>
+							<div class="ten columns">
+								<h4 class="media-heading">
+									{Asker} asked
+								</h4>
+								{Question}
+							</div>
+						</div>
+
+						<div class="caption">
+							{Answer}
+						</div>
+					{/block:Answer}
+
+					{block:IndexPage}
+						<hr>
+						<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCount} notes.</a>
+						<a class="u-pull-right" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
+					{/block:IndexPage}
+
+					{block:PermalinkPage}
+						{block:Date}
+						<div id="permalink">
+
+							<hr>
+
+							<p><b>Date:</b> {ShortMonth} {DayOfMonthWithZero}, {Year}</p>
+							{block:NoteCount}<p><b>Notes:</b> {NoteCount}</p>{/block:NoteCount}
+							{block:RebloggedFrom}<p><b>Via:</b> <a href="{ReblogParentURL}">{ReblogParentName}</a></p>{/block:RebloggedFrom}
+							{block:ContentSource}<p><b>Source:</b> <a href="{SourceURL}">{SourceTitle}</a></p>{/block:ContentSource}
+							{block:HasTags}<p><b>Tagged:</b>{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+						</div>
+						{/block:Date}
+					{/block:PermalinkPage}
+
+					{block:PostNotes}
+						<div class="note">
+							{PostNotes}
+						</div>
+					{/block:PostNotes}
+				</div>
+			</div>
+		</div>
+
+		{/block:Posts}
+		{block:Pagination}
+		<div id="pagebar" class="nav container">
+			<div class="row">
+				<div class="twelve columns post">
+					<div class="inner">
+						<ul class="pagination center">{block:PreviousPage}<li><a href="{PreviousPage}">←</a></li>{/block:PreviousPage}{block:JumpPagination length="6"}{block:CurrentPage}<li><a href="#" class="current_page active">{PageNumber}</a></li>{/block:CurrentPage}{block:JumpPage}<li><a class="jump_page" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<li><a href="{NextPage}">→</a></li>{/block:NextPage}</ul>
 					</div>
 				</div>
 			</div>
-			{/block:Pagination}
 		</div>
+		{/block:Pagination}
+	</div>
 
 	<!-- Scripts -->
 
