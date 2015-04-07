@@ -426,20 +426,22 @@
 			});
 		}
 
-		setNavigation();
-
 		/* Photoset responsiveness */
 		function resizePhotosets(){
-			var parentWidth = document.body.querySelector('.html_photoset').offsetWidth; 
-			var photosets = document.body.querySelectorAll('iframe.photoset');
-			for(var i = 0; i < photosets.length; ++i){
-				var photoset = photosets[i];
-				photoset.width = parentWidth;
-			}   
+			var parentWidth = $(".html_photoset").attr("offsetWidth"); 
+			$("iframe .photoset").each(function(){
+				$(this).attr("width", parentWidth);
+			}); 
 		}
 
-		window.onload = resizePhotosets;
-		window.onresize = resizePhotosets;
+		$(document).resize(resizePhotosets);
+
+		/* Init functions */
+
+		$(document).ready(function(){
+			setNavigation();
+			resizePhotosets();
+		});
 	</script>
 
 </body>
