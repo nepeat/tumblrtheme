@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- 
+
+
+		Theme by eggyeggegg.tumblr.com
+		licenced under "i really don't care just link me and keep this trashy comment"
+		accepting dogecoins DQ25qQLgeZqjFq9jqrpsy9pXAmraDAoaC4
+
+
+	-->
+	<title>{Title}</title>
+
+	<link rel="shortcut icon" href="{favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	{block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="if:Title" content="1"/>
+	<meta name="color:post side" content="#416600">
+	<meta name="color:quote bars" content="#888888">
+	<meta name="color:background" content="#416600">
+
+	<meta name="image:background image" content="">
+
+	<meta name="text:link1" content="Home">
+	<meta name="text:link2" content="Ask">
+	<meta name="text:link3" content="Submit">
+	<meta name="text:link4" content="Archive">
+	<meta name="text:link1 url" content="/">
+	<meta name="text:link2 url" content="/ask">
+	<meta name="text:link3 url" content="/submit">
+	<meta name="text:link4 url" content="/archive">
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet'>
+
+	<style type="text/css">
+		/* 1 rem def */
+		html {
+			font-size: 14px;
+		}
+
+		blockquote, dl, figure, form, ol, p, pre, table, ul {
+			margin-bottom: 1rem;
+		}
+
+		h1, h2 {
+			font-weight: 300;
+			margin: 5px;
+		}
+
+		hr {
+			margin: 2rem 0rem;
+			border-bottom: 1px solid #EEE;
+		}
+
+		/* Body rules */
+		body {
+			background: {color:background} url('{image:background image}');
+			background-attachment: fixed;
+			background-size: cover;
+			margin-top: 50px;
+			word-wrap: break-word;
+			font-family: Roboto, sans-serif;
+		}
+
+		/* Links */
+
+		a {
+			color: #33C3F0;
+			font-size: 1.1rem;
+			text-decoration: none;
+		}
+
+		a:hover { text-decoration: underline; }
+
+		/* Chat posts */
+
+		.chat { list-style: none }
+
+		/* Ask posts */
+
+		.askrow {
+			background-color: rgba(190, 190, 190, 0.5);
+			padding: 1rem;
+		}
+
+		/* Profile div */
+
+		#profile {
+			margin-bottom: 15px;
+		}
+
+		/* Post rules */
+		.post {
+			padding: 10px;
+			margin: 25px;
+			margin-bottom: 15px;
+			background-color: rgba(255, 255, 255, 0.75);
+			border-bottom: 3px solid {color:post side};
+		}
+
+		blockquote {
+			border-left: 3px solid {color:quote bars};
+			padding: 0px 1rem;
+			margin: 0px 1rem;
+		}
+
+		.fa { font-size: 1.5rem }
+
+		.caption {
+			margin-top: 1em;
+		}
+
+		/* Responsive images */
+
+		.post img:not(.icon):not(.avatar) {
+			max-width: 100%;
+			height: auto;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		/* Responsive videos */
+
+		.videoWrapper {
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			padding-top: 25px;
+			height: 0;
+		}
+
+		.videoWrapper iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Top description */
+
+		#title {
+			font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
+			font-size: 3rem;
+		}
+
+		.center {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+		.profile {
+			border-radius: 50%;
+			box-shadow: 0 0 0 2px;
+			color: #D2D2D2;
+		}
+
+		/* Show more notes link */
+
+		.more_notes_link_container { list-style-type: none; }
+
+		/* Horizontal navs */
+
+		li {padding: 0; margin: 0}
+
+		.nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.nav li {
+			display: inline;
+			vertical-align: top;
+		}
+
+		.nav a { padding: 1rem }
+		.nav { overflow: hidden }
+		.nav a.active, .nav a:hover { background-color: rgba(192, 192, 192, 0.50) }
+
+		/*
+		* Nav blank space hack 
+		* #lolhtml
+		*/
+
+		.nav { font-size: 0px }
+
+		.nav a { font-size: 1.1rem }
+
+		.container {
+			display: flex;
+			display: -webkit-flex;
+			flex-direction: column;
+			-webkit-flex-direction: column;
+			flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			-webkit-justify-content: center;
+			-webkit-align-items: center;
+		}
+
+		.row {
+			flex: 1 1 100%;
+			-webkit-flex: 1 1 100%;
+		}
+
+		.post {
+			flex: 1 1 100%;
+			-webkit-flex: 1 1 100%;
+			width: 75vw;
+		}
+
+		.two {
+			flex: 1 1 20%;
+			-webkit-flex: 1 1 20%;
+		}
+
+		.eight {
+			flex: 1 1 80%;
+			-webkit-flex: 1 1 80%;
+		}
+
+		.reblog {
+			float: right;
+			color: green;
+		}
+
+		/* Navbar responsiveness */
+		@media only screen and (max-width: 479px) {
+			#navbar li,
+			#navbar a {
+				display: block;
+				text-align: center;
+			}
+
+			#navbar li {
+				border-bottom: 1px solid #6B6B6B;
+			}
+
+			.two, .eight {
+				flex: 1 1 100%;
+				-webkit-flex: 1 1 100%;
+			}
+
+		}
+
+		/* Hide page numbers if device is small */
+
+		@media (max-width: 600px) {
+			.jump_page {
+				display: none;
+			}
+		}
+
+
+		{CustomCSS}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container center">
+		<div class="two">
+			<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile"></img>
+		</div>
+		<div class="eight">
+			<div id="desc">
+				<h1 id="title">{title}</h1>
+				<p id="desctext">{description}</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="navbar" class="container nav">
+		<div class="post">
+			<ul>
+				{block:ifLink1}<li><a href="{text:link1 url}">{text:link1}</a></li>{/block:ifLink1}
+				{block:ifLink2}<li><a href="{text:link2 url}">{text:link2}</a></li>{/block:ifLink2}
+				{block:ifLink3}<li><a href="{text:link3 url}">{text:link3}</a></li>{/block:ifLink3}
+				{block:ifLink4}<li><a href="{text:link4 url}">{text:link4}</a></li>{/block:ifLink4}
+				{block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		{block:Posts}
+		<div class="post">
+			{block:Photo}
+				{LinkOpenTag}
+					<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+				{LinkCloseTag}
+				{block:Caption}
+					<div class="caption">
+						{Caption}
+					</div>
+				{/block:Caption}
+			{/block:Photo}
+
+			{block:Photoset}
+				<div class="photoset">
+					{Photoset}
+				</div>
+				{block:Caption}
+					<div class="caption">
+						{Caption}
+					</div>
+				{/block:Caption}
+			{/block:Photoset}
+
+			{block:Text}
+				{block:Title}<h1>{Title}</h1>{/block:Title}
+					{block:Photo}
+						{LinkOpenTag}
+							<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+						{LinkCloseTag}
+						{block:Caption}
+							<div class="caption">
+								{Caption}
+							</div>
+						{/block:Caption}
+					{/block:Photo}
+				{Body}
+			{/block:Text}
+
+			{block:Quote}
+				<blockquote>
+					<p>"{Quote}"</p>
+					{block:Source}
+						<footer><cite>{Source}</cite></footer>
+					{/block:Source}
+				</blockquote>
+			{/block:Quote}
+
+
+			{block:Video}
+				<div class="videoWrapper">
+					{VideoEmbed-250}
+				</div>
+				{block:Caption}
+					<div class="caption">
+						{Caption}
+					</div>
+				{/block:Caption}
+			{/block:Video}
+
+
+			{block:Link}
+				<a href="{URL}" class="link" {Target}>
+					<h2>{Name} »</h2>
+				</a>
+				{block:Description}
+					<div class="caption">{Description}</div>
+				{/block:Description}
+			{/block:Link}
+
+			{block:Chat}
+				{block:Title} <h1>{Title}</h1> {/block:Title}
+				<ul class="chat">
+				{block:Lines}
+					<li class="{Alt} chatlines user_{UserNumber}">
+						{block:Label}
+							<strong>{Label}</strong>
+						{/block:Label}
+						{Line}
+					</li>
+				{/block:Lines}
+				</ul>
+			{/block:Chat}
+
+			{block:Audio}
+				{AudioEmbed}
+				{block:Caption}
+				<div class="caption">
+					{Caption}
+				</div>
+				{/block:Caption}
+			{/block:Audio}
+
+
+			{block:Answer}
+				<div class="askrow">
+					<div class="two">
+						<img src="{AskerPortraitURL-128}" style="width: 128px; height: 128px" class="profile media-object">
+					</div>
+					<div class="ten">
+						<h4 class="media-heading">
+							{Asker} asked
+						</h4>
+						{Question}
+					</div>
+				</div>
+
+				<div class="caption">
+					{Answer}
+				</div>
+			{/block:Answer}
+
+			{block:IndexPage}
+				<hr>
+				<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCount} notes.</a>
+				<a class="reblog" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
+			{/block:IndexPage}
+
+			{block:PermalinkPage}
+				{block:Date}
+				<div id="permalink">
+
+					<hr>
+
+					<p><b>Date:</b> {ShortMonth} {DayOfMonthWithZero}, {Year}</p>
+					{block:NoteCount}<p><b>Notes:</b> {NoteCount}</p>{/block:NoteCount}
+					{block:RebloggedFrom}<p><b>Via:</b> <a href="{ReblogParentURL}">{ReblogParentName}</a></p>{/block:RebloggedFrom}
+					{block:ContentSource}<p><b>Source:</b> <a href="{SourceURL}">{SourceTitle}</a></p>{/block:ContentSource}
+					{block:HasTags}<p><b>Tagged:</b> {block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}</p>{/block:HasTags}
+				</div>
+				{/block:Date}
+			{/block:PermalinkPage}
+
+			{block:PostNotes}
+				<div class="note">
+					{PostNotes}
+				</div>
+			{/block:PostNotes}
+		</div>
+		{/block:Posts}
+		{block:Pagination}
+		<div class="nav post">
+			<ul class="pagination center">{block:PreviousPage}<li><a href="{PreviousPage}">←</a></li>{/block:PreviousPage}{block:JumpPagination length="6"}{block:CurrentPage}<li><a href="#" class="current_page active">{PageNumber}</a></li>{/block:CurrentPage}{block:JumpPage}<li><a class="jump_page" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<li><a href="{NextPage}">→</a></li>{/block:NextPage}</ul>
+		</div>
+		{/block:Pagination}
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script>
+		/* Navbar active code */
+		function setNavigation() {
+			var path = decodeURIComponent(window.location.pathname.replace(/\/$/, ""));
+
+			$("#navbar a").each(function() {
+
+				// Ignore elements that have images
+				if ($(this).find("img").length) return;
+
+				if (($(this).attr("href") == "/" && path === "") || $(this).attr("href").indexOf(path) != -1) {
+					$(this).addClass("active");
+					return false;
+				}
+			});
+		}
+
+		/* Photoset responsiveness */
+		function resizePhotosets(){
+			var parentWidth = $(".html_photoset").attr("offsetWidth"); 
+			$("iframe .photoset").each(function(){
+				$(this).attr("width", parentWidth);
+			}); 
+		}
+
+		$(document).resize(resizePhotosets);
+
+		/* Init functions */
+
+		$(document).ready(function(){
+			setNavigation();
+			resizePhotosets();
+		});
+	</script>
+
+</body>
+</html>
