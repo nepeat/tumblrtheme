@@ -162,9 +162,13 @@
 			color: #D2D2D2;
 		}
 
-		/* Show more notes link */
+		/* Notes */
 
 		.more_notes_link_container { list-style-type: none; }
+
+		li.note {
+			width: 100%;
+		}
 
 		/* Horizontal navs */
 
@@ -228,7 +232,7 @@
 			-webkit-flex: 1 1 80%;
 		}
 
-		.reblog {
+		.rebloglink {
 			float: right;
 			color: green;
 		}
@@ -409,7 +413,7 @@
 			{block:IndexPage}
 				<hr>
 				<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCount} notes.</a>
-				<a class="reblog" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
+				<a class="rebloglink" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
 			{/block:IndexPage}
 
 			{block:PermalinkPage}
