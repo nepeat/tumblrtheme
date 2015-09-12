@@ -44,6 +44,10 @@
 			font-size: 14px;
 		}
 
+		ul {
+			padding-left: 0;
+		}
+
 		blockquote, dl, figure, form, ol, p, pre, table, ul {
 			margin-bottom: 1rem;
 		}
@@ -61,8 +65,8 @@
 		/* Body rules */
 		body {
 			background: {color:background} url('{image:background image}');
+			background-repeat: no-repeat;
 			background-attachment: fixed;
-			background-size: cover;
 			margin-top: 50px;
 			word-wrap: break-word;
 			font-family: Roboto, sans-serif;
@@ -105,9 +109,9 @@
 		}
 
 		blockquote {
-			border-left: 3px solid {color:quote bars};
-			padding: 0px 1rem;
-			margin: 0px 1rem;
+			border-left: 2px solid {color:quote bars};
+			padding: 0px 5px;
+			margin: 0px 5px;
 		}
 
 		.fa { font-size: 1.5rem }
@@ -201,25 +205,19 @@
 		.container {
 			display: flex;
 			display: -webkit-flex;
-			flex-direction: column;
-			-webkit-flex-direction: column;
 			flex-wrap: wrap;
-			-webkit-flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
+			-webkit-flex-wrap: wrap;
 			-webkit-justify-content: center;
 			-webkit-align-items: center;
 		}
 
-		.row {
-			flex: 1 1 100%;
-			-webkit-flex: 1 1 100%;
-		}
-
 		.post {
-			flex: 1 1 100%;
-			-webkit-flex: 1 1 100%;
-			width: 75vw;
+			flex: 1 1 75%;
+			-webkit-flex: 1 1 75%;
+			width: 75%;
+			max-width: 75%;
 		}
 
 		.two {
@@ -254,6 +252,10 @@
 				-webkit-flex: 1 1 100%;
 			}
 
+		}
+
+		.clearfix {
+			clear:both;
 		}
 
 		/* Hide page numbers if device is small */
@@ -443,6 +445,8 @@
 			<ul class="pagination center">{block:PreviousPage}<li><a href="{PreviousPage}">←</a></li>{/block:PreviousPage}{block:JumpPagination length="6"}{block:CurrentPage}<li><a href="#" class="current_page active">{PageNumber}</a></li>{/block:CurrentPage}{block:JumpPage}<li><a class="jump_page" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<li><a href="{NextPage}">→</a></li>{/block:NextPage}</ul>
 		</div>
 		{/block:Pagination}
+
+		<div class="clearfix"></div>
 	</div>
 
 	<!-- Scripts -->
@@ -468,8 +472,8 @@
 
 		/* Photoset responsiveness */
 		function resizePhotosets(){
-			var parentWidth = $(".html_photoset").attr("offsetWidth"); 
-			$("iframe .photoset").each(function(){
+			var parentWidth = $(".html_photoset").width();
+			$(".photoset iframe").each(function(){
 				$(this).attr("width", parentWidth);
 			}); 
 		}
