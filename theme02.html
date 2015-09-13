@@ -419,20 +419,17 @@
 				</div>
 			{/block:Answer}
 
-			{block:IndexPage}
-				<hr>
-				<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCount} notes.</a>
+			<div class="info">
+				<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCountWithLabel}</a>
 				<a class="rebloglink" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
-			{/block:IndexPage}
+			</div>
 
 			{block:PermalinkPage}
 				{block:Date}
-				<div id="permalink">
-
+				<div class="permalink">
 					<hr>
-
 					<p><b>Date:</b> {ShortMonth} {DayOfMonthWithZero}, {Year}</p>
-					{block:NoteCount}<p><b>Notes:</b> {NoteCount}</p>{/block:NoteCount}
+					{block:NoteCount}<p><b>Notes:</b> {NoteCountWithLabel}</p>{/block:NoteCount}
 					{block:RebloggedFrom}<p><b>Via:</b> <a href="{ReblogParentURL}">{ReblogParentName}</a></p>{/block:RebloggedFrom}
 					{block:ContentSource}<p><b>Source:</b> <a href="{SourceURL}">{SourceTitle}</a></p>{/block:ContentSource}
 					{block:HasTags}<p><b>Tagged:</b> {block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}</p>{/block:HasTags}
