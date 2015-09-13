@@ -42,22 +42,9 @@
 	<link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet">
 
 	<style type="text/css">
-		/* 1 rem def */
-		html {
-			font-size: 14px;
-		}
-
-		ul {
-			padding-left: 0;
-		}
-
-		blockquote, dl, figure, form, ol, p, pre, table, ul {
-			margin-bottom: 1rem;
-		}
-
-		h1, h2 {
+		h1, h2, h3, h4 {
 			font-weight: 300;
-			margin: 5px;
+			margin: 10px 0;
 		}
 
 		hr {
@@ -106,15 +93,17 @@
 
 		/* Profile div */
 
-		#profile {
+		#userinfo {
+			text-align: center;
 			margin-bottom: 15px;
 		}
 
 		/* Post rules */
+
 		.post {
 			padding: 10px;
-			margin: 25px;
-			margin-bottom: 15px;
+			/*margin: 25px;
+			margin-bottom: 15px;*/
 			background-color: rgba(255, 255, 255, 0.75);
 			border-bottom: 3px solid {color:post side};
 		}
@@ -167,7 +156,8 @@
 		.center {
 			justify-content: center;
 			align-items: center;
-			text-align: center;
+			-webkit-justify-content: center;
+			-webkit-align-items: center;
 		}
 
 		.profile {
@@ -214,8 +204,8 @@
 			vertical-align: top;
 		}
 
-		.nav a { padding: 1rem }
-		.nav { overflow: hidden }
+		.nav a { padding: 0.6rem 1rem; }
+		.nav { overflow: hidden; }
 		.nav a.active, .nav a:hover { background-color: rgba(192, 192, 192, 0.50) }
 
 		/*
@@ -223,19 +213,15 @@
 		* #lolhtml
 		*/
 
-		.nav { font-size: 0px }
+		.nav { font-size: 0px; }
 
-		.nav a { font-size: 1.1rem }
+		.nav a { font-size: 1rem; }
 
 		.container {
 			display: flex;
 			display: -webkit-flex;
 			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
 			-webkit-flex-wrap: wrap;
-			-webkit-justify-content: center;
-			-webkit-align-items: center;
 		}
 
 		.post {
@@ -245,14 +231,8 @@
 			max-width: 75%;
 		}
 
-		.two {
-			flex: 1 1 20%;
-			-webkit-flex: 1 1 20%;
-		}
-
-		.eight {
-			flex: 1 1 80%;
-			-webkit-flex: 1 1 80%;
+		.info {
+			margin-top: 25px;
 		}
 
 		.rebloglink {
