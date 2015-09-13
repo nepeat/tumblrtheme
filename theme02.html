@@ -308,7 +308,7 @@
 	<div class="container center">
 		{block:Posts}
 		<div class="post">
-			{block:PostTitle}<h1>{Title}</h1>{/block:PostTitle}
+			{block:Title}<h1>{Title}</h1>{/block:Title}
 			{block:Photo}
 				{LinkOpenTag}
 					<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
@@ -332,7 +332,6 @@
 			{/block:Photoset}
 
 			{block:Text}
-				{block:Title}<h1>{Title}</h1>{/block:Title}
 				{block:Photo}
 					{LinkOpenTag}
 						<img src="{PhotoURL-1280}" alt="{PhotoAlt}">
@@ -378,7 +377,6 @@
 			{/block:Link}
 
 			{block:Chat}
-				{block:Title} <h1>{Title}</h1> {/block:Title}
 				<ul class="chat">
 				{block:Lines}
 					<li class="{Alt} chatlines user_{UserNumber}">
