@@ -19,7 +19,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="if:Title" content="1"/>
+	<meta name="if:Show Title" content="1"/>
 	<meta name="font:Body" content="Helvetica">
 
 	<meta name="color:post side" content="#416600">
@@ -279,6 +279,7 @@
 <body>
 
 	<div class="container center">
+	{block:IfShowTitle}
 		<div class="two">
 			<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile"></img>
 		</div>
@@ -289,6 +290,7 @@
 			</div>
 		</div>
 	</div>
+	{/block:IfShowTitle}
 
 	<div id="navbar" class="container nav">
 		<div class="post">
