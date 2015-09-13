@@ -280,12 +280,12 @@
 
 <body>
 
-	<div class="container center">
 	{block:IfShowTitle}
+	<div id="userinfo" class="container center">
 		<div class="two">
 			<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile"></img>
 		</div>
-		<div class="eight">
+		<div class="five">
 			<div id="desc">
 				<h1 id="title">{title}</h1>
 				<p id="desctext">{description}</p>
@@ -294,7 +294,7 @@
 	</div>
 	{/block:IfShowTitle}
 
-	<div id="navbar" class="container nav">
+	<div id="navbar" class="container center nav">
 		<div class="post">
 			<ul>
 				{block:ifLink1}<li><a href="{text:link1 url}">{text:link1}</a></li>{/block:ifLink1}
@@ -306,7 +306,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container center">
 		{block:Posts}
 		<div class="post">
 			{block:Photo}
