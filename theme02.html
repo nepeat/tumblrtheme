@@ -478,20 +478,21 @@
 		}
 
 		/* Photoset responsiveness */
-		function resizePhotosets(){
+		function resizePhotosets() {
 			var parentWidth = $(".html_photoset").width();
 			$(".photoset iframe").each(function(){
 				$(this).attr("width", parentWidth);
 			}); 
 		}
 
-		$(document).resize(resizePhotosets);
-
 		/* Init functions */
 
 		$(document).ready(function(){
 			setNavigation();
 			resizePhotosets();
+			$(window).resize(function() {
+				resizePhotosets();
+			});
 		});
 	</script>
 
