@@ -417,10 +417,12 @@
 				</div>
 			{/block:Answer}
 
-			<div class="info">
-				<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCountWithLabel}</a>
-				<a class="rebloglink" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
-			</div>
+			{block:IndexPage}
+				<div class="info">
+					<a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year} {12Hour}:{Minutes} {CapitalAmPm} {NoteCountWithLabel}</a>
+					<a class="rebloglink" href="{ReblogURL}" target="_blank"><i class="fa fa-retweet"></i></a>
+				</div>
+			{/block:IndexPage}
 
 			{block:PermalinkPage}
 				{block:Date}
