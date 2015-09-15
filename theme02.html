@@ -473,10 +473,10 @@
 			});
 		}
 
-		/* Photoset responsiveness */
-		function resizePhotosets() {
-			var parentWidth = $(".html_photoset").width();
-			$(".photoset iframe").each(function(){
+		/* Photoset and audio responsiveness */
+		function resize_iframes() {
+			var parentWidth = $(".post").width();
+			$(".photoset iframe, .tumblr_audio_player").each(function(){
 				$(this).attr("width", parentWidth);
 			}); 
 		}
@@ -485,9 +485,9 @@
 
 		$(document).ready(function(){
 			setNavigation();
-			resizePhotosets();
+			resize_iframes();
 			$(window).resize(function() {
-				resizePhotosets();
+				resize_iframes();
 			});
 		});
 	</script>
