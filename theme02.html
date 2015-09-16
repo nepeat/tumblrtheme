@@ -29,14 +29,15 @@
 
 	<meta name="image:background image" content="">
 
-	<meta name="text:link1" content="Home">
-	<meta name="text:link2" content="Ask">
-	<meta name="text:link3" content="Submit">
-	<meta name="text:link4" content="Archive">
-	<meta name="text:link1 url" content="/">
-	<meta name="text:link2 url" content="/ask">
-	<meta name="text:link3 url" content="/submit">
-	<meta name="text:link4 url" content="/archive">
+	<meta name="text:Home Title" content="Home">
+	<meta name="text:Link 1" content="Archive">
+	<meta name="text:Link 2" content="">
+	<meta name="text:Link 3" content="">
+	<meta name="text:Link 4" content="">
+	<meta name="text:Link 1 url" content="/archive">
+	<meta name="text:Link 2 url" content="">
+	<meta name="text:Link 3 url" content="">
+	<meta name="text:Link 4 url" content="">
 
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet">
@@ -297,10 +298,13 @@
 	<div id="navbar" class="container center nav">
 		<div class="post">
 			<ul>
-				{block:ifLink1}<li><a href="{text:link1 url}">{text:link1}</a></li>{/block:ifLink1}
-				{block:ifLink2}<li><a href="{text:link2 url}">{text:link2}</a></li>{/block:ifLink2}
-				{block:ifLink3}<li><a href="{text:link3 url}">{text:link3}</a></li>{/block:ifLink3}
-				{block:ifLink4}<li><a href="{text:link4 url}">{text:link4}</a></li>{/block:ifLink4}
+				<li><a href="/">{text:Home Title}</a></li>
+				{block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+				{block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+				{block:ifLink1}<li><a href="{text:Link 1 url}">{text:Link 1}</a></li>{/block:ifLink1}
+				{block:ifLink2}<li><a href="{text:Link 2 url}">{text:Link 2}</a></li>{/block:ifLink2}
+				{block:ifLink3}<li><a href="{text:Link 3 url}">{text:Link 3}</a></li>{/block:ifLink3}
+				{block:ifLink4}<li><a href="{text:Link 4 url}">{text:Link 4}</a></li>{/block:ifLink4}
 				{block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
 			</ul>
 		</div>
