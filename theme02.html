@@ -180,6 +180,13 @@
 			-webkit-flex: 1 1 50%;
 		}
 
+		{block:HideAvatar}
+		.five {
+			flex: 1 1 100%;
+			-webkit-flex: 1 1 100%;
+		}
+		{/block:HideAvatar} 
+
 		.eight {
 			flex: 1 1 80%;
 			-webkit-flex: 1 1 80%;
@@ -287,12 +294,12 @@
 	{block:IfShowTitle}
 	<div id="userinfo" class="container center">
 		<div class="two">
-			<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile {AvatarShape}"></img>
+			{block:ShowAvatar}<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile {AvatarShape}"></img>{/block:ShowAvatar} 
 		</div>
 		<div class="five">
 			<div id="desc">
-				<h1 id="title">{title}</h1>
-				<p id="desctext">{description}</p>
+				{block:ShowTitle}<h1 id="title">{title}</h1>{/block:ShowTitle} 
+				{block:ShowDescription} <p id="desctext">{description}</p>{/block:ShowDescription}
 			</div>
 		</div>
 	</div>
