@@ -162,9 +162,12 @@
 		}
 
 		.profile {
-			border-radius: 50%;
 			box-shadow: 0 0 0 2px;
 			color: #D2D2D2;
+		}
+
+		.profile.circle {
+			border-radius: 50%;
 		}
 
 		.two {
@@ -284,7 +287,7 @@
 	{block:IfShowTitle}
 	<div id="userinfo" class="container center">
 		<div class="two">
-			<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile"></img>
+			<img src="{PortraitURL-128}" style="height: 128px; width: 128px" class="profile {AvatarShape}"></img>
 		</div>
 		<div class="five">
 			<div id="desc">
