@@ -138,7 +138,7 @@ blockquote {
 #userinfo #desc {
   font-family: {TitleFont};
   font-weight: {TitleFontWeight};
-  color-color: description;
+  color: {color:Description};
   margin: 0 25px;
 }
 #userinfo #title {
