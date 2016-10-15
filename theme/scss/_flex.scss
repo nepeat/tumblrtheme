@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+.post {
+    flex: 1 1 75%;
+    -webkit-flex: 1 1 75%;
+    width: 75%;
+    max-width: 75%;
+}
+
+.two {
+    flex: 1 1 20%;
+    -webkit-flex: 1 1 20%;
+}
+
+.five {
+    flex: 1 1 50%;
+    -webkit-flex: 1 1 50%;
+}
+
+.eight {
+    flex: 1 1 80%;
+    -webkit-flex: 1 1 80%;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+}

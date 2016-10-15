@@ -1,0 +1,6 @@
+{block:HideAvatar}
+.blogdetails {
+    flex: 1 1 100%;
+    -webkit-flex: 1 1 100%;
+}
+{/block:HideAvatar} 
