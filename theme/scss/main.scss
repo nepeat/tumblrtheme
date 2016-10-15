@@ -1,3 +1,4 @@
+@import "globals";
 @import "flex";
 
 /* Base elements */
@@ -21,15 +22,37 @@ h1, h2, h3, h4 {
     margin: 10px 0;
 }
 
+li {
+    padding: 0;
+    margin: 0
+}
+
 hr {
     margin: 2rem 0rem;
     border-bottom: 1px solid #EEE;
 }
 
 blockquote {
-    border-left: 2px solid {color:quote bars};
+    border-left: 2px solid {color:Quote Bars};
     padding: 0px 5px;
     margin: 0px 5px;
+}
+
+/* General */
+
+.fa { font-size: 1.5rem; }
+.clearfix { clear: both; }
+
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    background: {color:Background} url('{image:Background Image}');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Posts */
@@ -37,7 +60,7 @@ blockquote {
 .post {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.75);
-    border-bottom: 3px solid {color:post side};
+    border-bottom: 3px solid {color:Post Side};
 
     .ask {
         background-color: rgba(190, 190, 190, 0.5);
@@ -56,8 +79,16 @@ blockquote {
         margin-top: 25px;
         .rebloglink {
             float: right;
-            color: {color:reblog link};
+            color: {color:Reblog Link};
         }
+    }
+
+    // Notes
+    .more_notes_link_container { list-style-type: none; }
+
+    li.note {
+        width: 100%;
+        margin-bottom: 5px;
     }
 
     // Responsive images 
@@ -88,22 +119,6 @@ blockquote {
     }
 }
 
-/* General */
-
-.fa { font-size: 1.5rem }
-
-#background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    background: {color:Background} url('{image:Background Image}');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 /* Videos */
 
 .videoWrapper,
@@ -131,18 +146,7 @@ blockquote {
     }
 }
 
-/* Notes */
-
-.more_notes_link_container { list-style-type: none; }
-
-li.note {
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-/* Horizontal navs */
-
-li {padding: 0; margin: 0}
+/* Navbar */
 
 .nav {
     & {
@@ -171,8 +175,8 @@ li {padding: 0; margin: 0}
     }
 }
 
-/* Navbar responsiveness */
-@media only screen and (max-width: 768px) {
+/* Mobile */
+@media only screen and (max-width: $mobile_width) {
     #title {
         font-size: 2rem;
     }
@@ -194,13 +198,7 @@ li {padding: 0; margin: 0}
     }
 }
 
-.clearfix {
-    clear: both;
-}
-
-/* Change pagination style for small devices */
-
-@media (max-width: 480px) {
+@media (max-width: $very_small_width) {
     .jump_page {
         display: none;
     }

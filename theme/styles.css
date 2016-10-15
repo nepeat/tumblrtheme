@@ -55,24 +55,48 @@ h1, h2, h3, h4 {
   margin: 10px 0;
 }
 
+li {
+  padding: 0;
+  margin: 0;
+}
+
 hr {
   margin: 2rem 0rem;
   border-bottom: 1px solid #EEE;
 }
 
 blockquote {
-  border-left: 2px solid;
-  border-left-color: quote bars;
+  border-left: 2px solid {color:Quote Bars};
   padding: 0px 5px;
   margin: 0px 5px;
+}
+
+/* General */
+.fa {
+  font-size: 1.5rem;
+}
+
+.clearfix {
+  clear: both;
+}
+
+#background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background: {color:Background} url("{image:Background Image}");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Posts */
 .post {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.75);
-  border-bottom: 3px solid;
-  border-bottom-color: post side;
+  border-bottom: 3px solid {color:Post Side};
 }
 .post .ask {
   background-color: rgba(190, 190, 190, 0.5);
@@ -83,6 +107,20 @@ blockquote {
 }
 .post .caption {
   margin-top: 1em;
+}
+.post .info {
+  margin-top: 25px;
+}
+.post .info .rebloglink {
+  float: right;
+  color: {color:Reblog Link};
+}
+.post .more_notes_link_container {
+  list-style-type: none;
+}
+.post li.note {
+  width: 100%;
+  margin-bottom: 5px;
 }
 .post img:not(.icon):not(.avatar) {
   max-width: 100%;
@@ -105,23 +143,6 @@ blockquote {
 }
 #userinfo #title {
   font-size: 3rem;
-}
-
-/* General */
-.fa {
-  font-size: 1.5rem;
-}
-
-#background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -10;
-  background: {color:Background} url("{image:Background Image}");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* Videos */
@@ -150,22 +171,7 @@ blockquote {
   border-radius: 50%;
 }
 
-/* Notes */
-.more_notes_link_container {
-  list-style-type: none;
-}
-
-li.note {
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-/* Horizontal navs */
-li {
-  padding: 0;
-  margin: 0;
-}
-
+/* Navbar */
 .nav {
   overflow: hidden;
   font-size: 0px;
@@ -187,16 +193,7 @@ li {
   background-color: rgba(192, 192, 192, 0.5);
 }
 
-.info {
-  margin-top: 25px;
-}
-
-.rebloglink {
-  float: right;
-  color-color: reblog link;
-}
-
-/* Navbar responsiveness */
+/* Mobile */
 @media only screen and (max-width: 768px) {
   #title {
     font-size: 2rem;
@@ -218,11 +215,6 @@ li {
     padding: 15px;
   }
 }
-.clearfix {
-  clear: both;
-}
-
-/* Change pagination style for small devices */
 @media (max-width: 480px) {
   .jump_page {
     display: none;
