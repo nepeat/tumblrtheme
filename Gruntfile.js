@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         inline: {
             dist: {
                 src: "theme/index.html",
-                dest: "theme02.html",
+                dest: "dist/theme.html",
             },
         },
         watch: {
