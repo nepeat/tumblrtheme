@@ -22,7 +22,7 @@ module.exports = function(grunt) {
             },
         },
         watch: {
-            files: ["theme/**/*.scss", "theme/**/*.html"],
+            files: ["theme/**/*.scss", "theme/**/*.html", "theme/extra_styles.css"],
             tasks: ["build"]
         }
     });

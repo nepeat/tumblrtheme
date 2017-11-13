@@ -17,7 +17,14 @@
 	<meta name="if:Show Avatar and Description" content="1"/>
 	<meta name="font:Body" content="Helvetica">
 
-	<meta name="color:Link Color" content="#33C3F0">
+	<meta name="select:Post transparency" content="1.00" title="100%">
+	<meta name="select:Post transparency" content="0.75" title="75%">
+	<meta name="select:Post transparency" content="0.50" title="50%">
+	<meta name="select:Post transparency" content="0.25" title="25%">
+	<meta name="select:Post transparency" content="0" title="Solid">
+
+	<meta name="color:Text" content="rgba(255, 255, 255, 0.75)">
+	<meta name="color:Links" content="#333333">
 	<meta name="color:post side" content="#AAAAAA">
 	<meta name="color:quote bars" content="#888888">
 	<meta name="color:background" content="#CCCCCC">
@@ -77,6 +84,7 @@
 
 /* Base elements */
 body {
+  color: {color:Text};
   margin: 35px 0;
   font-family: {font:Body}, sans-serif;
   font-size: 16px;
@@ -84,7 +92,7 @@ body {
 }
 
 a {
-  color: {color:Link Color};
+  color: {color:Links};
   text-decoration: none;
 }
 a:hover {
@@ -136,7 +144,6 @@ blockquote {
 /* Posts */
 .post {
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
   border-bottom: 3px solid {color:Post Side};
 }
 .post .ask {
@@ -265,6 +272,12 @@ blockquote {
 
 </style>
 	<style>
+/* Extra styles that SCSS cannot handle. */
+ 
+.post {
+    background-color: rgba(255, 255, 255, {select:Post Transparency});
+}
+
 {block:HideAvatar}
 .blogdetails {
     flex: 1 1 100%;

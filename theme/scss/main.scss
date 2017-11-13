@@ -3,6 +3,7 @@
 
 /* Base elements */
 body {
+    color: {color:Text};
     margin: 35px 0;
     font-family: {font:Body}, sans-serif;
     font-size: 16px;
@@ -10,7 +11,7 @@ body {
 }
 
 a {
-    color: {color:Link Color};
+    color: {color:Links};
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -59,7 +60,6 @@ blockquote {
 
 .post {
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.75);
     border-bottom: 3px solid {color:Post Side};
 
     .ask {

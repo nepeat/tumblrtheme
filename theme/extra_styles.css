@@ -1,3 +1,9 @@
+/* Extra styles that SCSS cannot handle. */
+ 
+.post {
+    background-color: rgba(255, 255, 255, {select:Post Transparency});
+}
+
 {block:HideAvatar}
 .blogdetails {
     flex: 1 1 100%;
